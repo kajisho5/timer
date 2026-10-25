@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEQVIO TIMER — CONTROL</title>
+</head>
+<body>
+<div id="cwrap">
+  <div id="cremain-row">
+    <span id="cremain">00:00</span>
+    <span id="cstatus">STOP</span>
+  </div>
+  <div id="transport">
+    <button id="btnStart" class="cbig go"><span>▶ 開始</span><span class="key">SPACE</span></button>
+    <button id="btnStop"  class="cbig stp"><span>■ 停止</span><span class="key">SPACE</span></button>
+    <button id="btnReset" class="cbig"><span>↺ リセット</span><span class="key">ESC</span></button>
+    <button id="btnSet"   class="cbig"><span>⏱ 時間セット</span><span class="key">0〜9</span></button>
+  </div>
+  <div class="crow">
+    <label>プリセット</label>
+    <div class="presets">
+      <div class="pre" data-sec="120">2:00</div>
+      <div class="pre" data-sec="1200">20:00</div>
+      <div class="pre" data-sec="1800">30:00</div>
+      <div class="pre" data-sec="2400">40:00</div>
+    </div>
+  </div>
+  <div class="crow">
+    <label>背景色</label><input type="color" id="cBg" value="#ffffff">
+    <label>文字色</label><input type="color" id="cFg" value="#5f2758">
+    <div class="sep"></div>
+    <label>フォント</label>
+    <select id="selFont">
+      <option value="System">標準（おすすめ）</option>
+      <option value="Mona Lisa Recut">Mona Lisa Recut（ロゴと同じ）</option>
+      <option value="Orbitron">Orbitron</option>
+      <option value="Bebas Neue">Bebas Neue</option>
+      <option value="Share Tech Mono">Share Tech</option>
+      <option value="Noto Sans JP">Noto Sans JP</option>
+      <option value="monospace">Monospace</option>
+    </select>
+    <label>サイズ</label>
+    <input type="number" id="numSize" value="30" min="4" max="60" step="1">
+  </div>
+  <div id="chint">
+    <b>SPACE</b>開始/停止 　<b>ESC</b>リセット 　<b>0〜9</b>時間入力 　<b>ENTER</b>確定 　<b>⌫</b>1桁削除<br>
+    ショートカットはこのウィンドウ・表示ウィンドウのどちらが前面でも使えます
+  </div>
+</div>
+<div id="ccredit">produced by SEVENTHWELL</div>
+<script type="module" src="/src/control.ts"></script>
+</body>
+</html>

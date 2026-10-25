@@ -1,0 +1,75 @@
+/* ===== SPLASH ===== */
+#splash {
+  position:fixed; inset:0; z-index:9999;
+  background:#f8e6a8 url('/assets/splash-bg.webp') center / cover no-repeat;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+#sp-video {
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+}
+#splash.done { display:none; }
+#splash.fade-out { animation: sp-fade-out .65s ease-in forwards; }
+@keyframes sp-fade-out { to { opacity:0; } }
+
+/* ロゴ本体 */
+#sp-logo {
+  position:relative; z-index:1;
+  display:flex; flex-direction:column; align-items:flex-start;
+  gap:0;
+}
+
+/* 左端縦ライン */
+#sp-logo::before {
+  content:'';
+  position:absolute;
+  left:-22px; top:0; bottom:0; width:1.5px;
+  background:linear-gradient(180deg, transparent, #5f2758 25%, #5f2758 75%, transparent);
+  opacity:0;
+  animation: sp-fade-in .4s .55s ease forwards;
+}
+
+/* LEQVIO — 塗り、左からスライドイン */
+#sp-stage {
+  font-family:'Mona Lisa Recut', 'Mona Lisa Solid', 'Prata', 'Big Caslon', Georgia, serif;
+  font-size:clamp(64px,10vw,120px);
+  font-weight:400;
+  color:#5f2758;
+  letter-spacing:.01em;
+  line-height:1.05;
+  opacity:0; transform:translateX(-28px);
+  animation: sp-slide-right .52s .1s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+/* TIMER — 右からスライドイン */
+#sp-clock {
+  font-family:'Mona Lisa Recut', 'Mona Lisa Solid', 'Prata', 'Big Caslon', Georgia, serif;
+  font-size:clamp(64px,10vw,120px);
+  font-weight:400;
+  color:#5f2758;
+  letter-spacing:.01em;
+  line-height:1.05;
+  padding-left:clamp(14px,2.2vw,26px);
+  opacity:0; transform:translateX(28px);
+  animation: sp-slide-left .52s .22s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+/* コロンマーク */
+#sp-colon {
+  position:absolute;
+  right:-22px; top:50%; transform:translateY(-50%);
+  display:flex; flex-direction:column; gap:clamp(7px,1.2vw,12px);
+  opacity:0;
+  animation: sp-fade-in .3s .62s ease forwards;
+}
+#sp-colon span {
+  display:block;
+  width:clamp(5px,.7vw,7px); height:clamp(5px,.7vw,7px);
+  border-radius:50%; background:#5f2758;
+}
+
+@keyframes sp-slide-right { to { opacity:1; transform:translateX(0); } }
+@keyframes sp-slide-left  { to { opacity:1; transform:translateX(0); } }
+@keyframes sp-fade-in     { to { opacity:1; } }

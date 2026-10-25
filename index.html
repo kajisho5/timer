@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEQVIO TIMER</title>
+</head>
+<body>
+
+<!-- スプラッシュ -->
+<div id="splash">
+  <img id="sp-video" src="/assets/splash-bg.webp" alt="">
+  <div id="sp-logo">
+    <div id="sp-stage">LEQVIO</div>
+    <div id="sp-clock">TIMER</div>
+    <div id="sp-colon"><span></span><span></span></div>
+  </div>
+</div>
+
+<div id="app">
+  <div id="frame">
+    <div id="time">00:00</div>
+    <div id="overrun-label">OVERRUN</div>
+  </div>
+</div>
+<div id="credit">LEQVIO TIMER &nbsp;/&nbsp; produced by SEVENTHWELL</div>
+<div id="conn-dot" title="コントロール接続中"></div>
+<button id="btn-reopen">⧉ コントロールを再表示</button>
+
+<script type="module" src="/src/display.ts"></script>
+</body>
+</html>

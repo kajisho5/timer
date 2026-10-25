@@ -1,0 +1,29 @@
+[package]
+name = "leqvio-timer"
+version = "1.0.0"
+description = "LEQVIO TIMER - countdown timer for events"
+authors = ["SEVENTHWELL"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.6", features = [] }
+
+[dependencies]
+tauri = { version = "2.12", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[lib]
+name = "leqvio_timer_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[features]
+# tauri build が自動で有効にする（画面を同梱ファイルから読む）
+custom-protocol = ["tauri/custom-protocol"]

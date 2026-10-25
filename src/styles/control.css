@@ -1,0 +1,51 @@
+html,body{background:#0a0a0a; overflow:hidden;}
+#cwrap{padding:12px 18px 16px; display:flex; flex-direction:column; gap:12px; height:100%;}
+#cremain-row{
+  display:flex; align-items:baseline; gap:14px;
+  border-bottom:1px solid #1a1a1a; padding-bottom:8px;
+}
+#cremain{
+  font-family:monospace; font-size:2.5rem; font-weight:bold;
+  color:#fff; letter-spacing:0.04em; line-height:1;
+  font-variant-numeric: tabular-nums;
+}
+#cstatus{
+  font-family:monospace; font-size:12px; letter-spacing:0.15em;
+  color:#777; border:1px solid #333; border-radius:3px; padding:2px 10px;
+}
+#transport{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+.cbig{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px;
+  padding:20px 6px; font-size:19px; border-radius:4px;
+}
+.cbig .key{
+  font-size:10px; color:#666; letter-spacing:0.12em;
+  border:1px solid #333; border-radius:3px; padding:2px 9px;
+}
+.cbig{ transition:transform 0.08s, filter 0.08s; }
+.cbig.pressed{
+  transform:scale(0.94);
+  filter:brightness(2.2);
+  background:#242424!important;
+}
+.cbig.go .key{ border-color:#2d6a2d; color:#5a5; }
+.cbig.stp .key{ border-color:#6a2d2d; color:#a55; }
+.crow{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+.crow .pre{ font-size:14px; padding:8px 15px; }
+#chint{
+  margin-top:auto; padding-top:10px; border-top:1px solid #1a1a1a;
+  font-family:monospace; font-size:11.5px; color:#555; letter-spacing:0.05em;
+  line-height:1.8;
+}
+#chint b{ color:#999; font-weight:normal; border:1px solid #333; border-radius:2px; padding:0 6px; margin-right:2px; }
+#numpad-box{ padding:12px; min-width:230px; gap:7px; max-height:94vh; overflow:auto; }
+#numpad-preview{ font-size:2rem; padding:2px 0 8px; margin-bottom:2px; }
+.nk{ font-size:1.15rem; padding:8px 0; }
+.nk.del, .nk.ok{ font-size:1rem; }
+.nk.cancel{ font-size:0.9rem; }
+#ccredit{
+  position:fixed; bottom:8px; right:12px;
+  font-family:monospace; font-size:10px; letter-spacing:0.2em;
+  color:#fff; opacity:0.14; pointer-events:none; user-select:none;
+}
+#selFont{ width:170px; }
